@@ -86,12 +86,14 @@
           jsonData[key] = value;
         });
 
+        // Uses fetch() to make a POST request to 
+        ///predict endpoint (assuming this endpoint exists on your server).
         fetch("/predict", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(jsonData),
+          body: JSON.stringify(jsonData), //converts jsonData object to json string
         })
           .then((response) => response.json())
           .then((data) => {
@@ -107,7 +109,7 @@
       }
     </script>
 
-<!-- This script is designed to handle form submission and prediction retrieval using JavaScript fetch API and JSON. Here's a breakdown of what it does:
+    <!-- This script is designed to handle form submission and prediction retrieval using JavaScript fetch API and JSON. Here's a breakdown of what it does:
 
 Function Definition (submitForm()):
 
@@ -133,6 +135,5 @@ If successful, displays the prediction (assuming data.prediction holds the predi
 
 Error Handling:
 Catches and logs any errors that occur during the fetch request. -->
-
   </body>
 </html>
